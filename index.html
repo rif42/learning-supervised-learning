@@ -324,8 +324,6 @@
   function current(){return idx}
   document.querySelectorAll('[data-next]').forEach(function(b){b.onclick=function(){go(idx+1)}});
   document.querySelectorAll('[data-prev]').forEach(function(b){b.onclick=function(){go(idx-1)}});
-  document.getElementById('topPrev').onclick=function(){go(idx-1)};
-  document.getElementById('topNext').onclick=function(){go(idx+1)};
   document.addEventListener('keydown',function(e){
     if(e.key==='ArrowRight'||e.key==='PageDown')go(idx+1);
     if(e.key==='ArrowLeft'||e.key==='PageUp')go(idx-1);
