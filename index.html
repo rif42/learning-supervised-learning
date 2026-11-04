@@ -244,9 +244,9 @@
         <figure style="margin:0;text-align:center"><img class="hero-img img-cat" src="lesson-03-cat.png" alt="Curled-up orange cat from prediction" style="margin:0"><figcaption class="small">Prediction: Cat</figcaption></figure>
       </div>
       <div style="text-align:center"><span class="label-badge" id="taskLabel">orange</span></div>
-      <p class="small" id="taskWhy">We only care about color, so the answer is “orange”.</p>
+      <p id="taskWhy">Move all the words from `Data` bin to either `Features` or `Labels` bin.</p>
       <div class="bins">
-        <div class="bin binF"><h3>👁 Features — clues you SEE</h3><div class="chips" id="sortPool">
+        <div class="bin binF"><h3>Data</h3><div class="chips" id="sortPool">
           <span class="chip" draggable="true" data-kind="f">round</span>
           <span class="chip" draggable="true" data-kind="f">orange color</span>
           <span class="chip" draggable="true" data-kind="f">whiskers</span>
@@ -318,8 +318,6 @@
     dots.forEach(function(d,j){d.classList.toggle('on',j===idx)});
     slideNo.textContent=(idx+1)+' / '+slides.length;
     progress.style.width=((idx+1)/slides.length*100)+'%';
-    document.getElementById('topPrev').disabled=(idx===0);
-    document.getElementById('topNext').disabled=(idx===slides.length-1);
   }
   function current(){return idx}
   document.querySelectorAll('[data-next]').forEach(function(b){b.onclick=function(){go(idx+1)}});
