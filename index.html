@@ -227,64 +227,10 @@
     </div>
   </section>
 
-  <section class="slide" id="s3">
-    <div class="inner" id="step3">
-      <div class="kicker">Slide 6 · meaning</div>
-      <h2>Labels give meaning to data</h2>
-      <p><b>Features</b> = what you look at. <b>Label</b> = what the teacher says it <i>means</i>.</p>
-      <p><span class="rule">round + orange + bumpy → Orange</span><br>
-      <span class="rule">round + orange + bumpy + ears + eyes + whiskers → Cat</span></p>
-      <div class="tabs">
-        <button class="chosen" data-task="color">🎨 color → orange</button>
-        <button data-task="animal">🐾 animal → cat</button>
-        <button data-task="feeling">💛 feeling → cute</button>
-      </div>
-      <figure style="margin:12px auto;text-align:center;max-width:min(640px,100%)"><img class="hero-img" src="lesson-03-compare.jpg" alt="Grid of round orange photos: orange slices, whole oranges, and curled-up orange cats" ><figcaption class="small">Oranges or cats? Round and orange is not enough. The task decides the label.</figcaption></figure>
-      <div style="text-align:center"><span class="label-badge" id="taskLabel">orange</span></div>
-      <p id="taskWhy">Move all the words from `Data` bin to either `Features` or `Labels` bin.</p>
-      <div class="bins">
-        <div class="bin binF"><h3>Data</h3><div class="chips" id="sortPool">
-          <span class="chip" draggable="true" data-kind="f">round</span>
-          <span class="chip" draggable="true" data-kind="f">orange color</span>
-          <span class="chip" draggable="true" data-kind="f">whiskers</span>
-          <span class="chip" draggable="true" data-kind="l">Cat</span>
-          <span class="chip" draggable="true" data-kind="l">Orange fruit</span>
-          <span class="chip" draggable="true" data-kind="l">cute</span>
-        </div><div class="small">Drag a chip into a bin, or tap a chip, then tap a bin.</div></div>
-        <div style="display:grid;gap:12px">
-          <div class="bin binF" id="binF"><h3>👁 Drop features here</h3></div>
-          <div class="bin binL" id="binL"><h3>🏷 Drop labels here</h3></div>
-        </div>
-      </div>
-      <div class="msg" id="sortMsg"></div>
-      <div class="nav"><button data-prev>← Back</button><button class="primary" data-next id="sortNext" style="display:none">Next →</button></div>
-    </div>
-  </section>
-
-  <section class="slide" id="s4">
-    <div class="inner" id="step4">
-      <div class="kicker">Slide 7 · check</div>
-      <h2>Mini quiz</h2>
-      <div class="quiz-q">
-        <p><b>1.</b> Robot only knows Orange. It sees an orange cat. What will it say?</p>
-        <button data-q="1" data-a="0">Cat, because it sees whiskers</button>
-        <button data-q="1" data-a="1">Orange, because that's all it was taught</button>
-        <div class="msg" id="q1msg"></div>
-      </div>
-      <div class="quiz-q">
-        <p><b>2.</b> Which one is a <i>label</i>?</p>
-        <button data-q="2" data-a="0">round</button>
-        <button data-q="2" data-a="1">Cat</button>
-        <button data-q="2" data-a="0">orange color</button>
-        <div class="msg" id="q2msg"></div>
-      </div>
-      <div class="nav"><button data-prev>← Back</button><button class="primary" data-next>Finish →</button></div>
-    </div>
-  </section>
 
   <section class="slide" id="s5">
     <div class="inner" id="finish">
-      <div class="kicker">Slide 8 · recap</div>
+      <div class="kicker">Slide 6 · recap</div>
       <h2>🏁 What you learned</h2>
       <p>Supervised learning = <b>human gives labeled examples, machine learns which features predict which label, then predicts new photos</b>.</p>
       <p class="small">Features alone don't decide. Task decides the label.</p>
@@ -325,7 +271,7 @@
   });
   go(0);
 
-  var known=0,done={},found={color:false,shape:false,texture:false},catFound=0,picked=null;
+  var known=0,done={},found={color:false,shape:false,texture:false},catFound=0;
   function mark(id){
     if(done[id])return;done[id]=1;
     var box=document.getElementById('step'+id);if(box)box.classList.add('done');
