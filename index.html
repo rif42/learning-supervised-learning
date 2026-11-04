@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Lesson 03 — Supervised Learning: Labels Give Meaning</title>
+  <title>Lesson 03: Supervised Learning, Labels Give Meaning</title>
 <style>
   :root{
     --bg:#EDF6EA; --card:#ffffff; --ink:#14210F; --muted:#5C7058;
@@ -198,7 +198,7 @@
       </div>
       <div class="reveal" id="pfeatOut">Found: nothing yet…</div>
       <div id="predictBox" style="display:none">
-        <p><b>Features match the orange! Little robot — what is it?</b></p>
+        <p><b>Features match the orange! Little robot, what is it?</b></p>
         <button class="primary" id="guessOrange">It's an ORANGE! 🍊</button>
         <button class="blue" id="guessCat">It's a CAT! 🐈</button>
       </div>
@@ -211,10 +211,10 @@
       <div class="kicker">Slide 5 · discovery</div>
       <h2>Teacher gave you a new label</h2>
       <div style="text-align:center"><span class="label-badge">Cat</span></div>
-      <p>Before, you only knew <b>Orange</b> — because that's all I ever taught you. Now I'm telling you the real answer: <b>this photo is a Cat</b>.</p>
-      <p>Now you know <b>two</b> things — Orange <b>and</b> Cat — because I taught you both. <b>That's the importance of a label:</b> without me naming it, you'd stare at those ears and whiskers forever and still guess “orange”.</p>
+      <p>Before, you only knew <b>Orange</b>, because that's all I ever taught you. Now I'm telling you the real answer: <b>this photo is a Cat</b>.</p>
+      <p>Now you know <b>two</b> things, Orange <b>and</b> Cat, because I taught you both. <b>That's the importance of a label:</b> without me naming it, you'd stare at those ears and whiskers forever and still guess “orange”.</p>
       <img class="hero-img img-cat" src="lesson-03-cat.png" alt="Curled-up orange cat">
-      <p class="small">Same orange ball — but look closer. Tap the NEW clues Orange didn't have. Collect 3:</p>
+      <p class="small">Same orange ball, but look closer. Tap the NEW clues Orange didn't have. Collect 3:</p>
       <div class="chips" id="catFeats" style="justify-content:center">
         <span class="chip" data-new="1">👂 ears</span>
         <span class="chip" data-new="1">👁 eyes</span>
@@ -253,7 +253,7 @@
           <span class="chip" draggable="true" data-kind="l">Cat</span>
           <span class="chip" draggable="true" data-kind="l">Orange fruit</span>
           <span class="chip" draggable="true" data-kind="l">cute</span>
-        </div><div class="small">Drag a chip into a bin — or tap a chip, then tap a bin.</div></div>
+        </div><div class="small">Drag a chip into a bin, or tap a chip, then tap a bin.</div></div>
         <div style="display:grid;gap:12px">
           <div class="bin binF" id="binF"><h3>👁 Drop features here</h3></div>
           <div class="bin binL" id="binL"><h3>🏷 Drop labels here</h3></div>
@@ -384,7 +384,7 @@
     known=1;
     var m=document.getElementById('trainMsg');
     m.className='msg show win';
-    m.innerHTML='The image above is <span class="label-badge">Orange</span> — a fruit!<br><br><b>“Orange has round shape and orange color, and smooth-but-bumpy texture.”</b>';
+    m.innerHTML='The image above is <span class="label-badge">Orange</span>, a fruit!<br><br><b>“Orange has round shape and orange color, and smooth-but-bumpy texture.”</b>';
     mark(1);
     document.getElementById('trainNext').style.display='';
   };
@@ -426,9 +426,9 @@
     document.getElementById('predNext').style.display='';
   }
   document.getElementById('guessOrange').onclick=function(){
-    revealCat("<b>You're right — the only thing I taught you is orange.</b>","<br>But in reality, it's not an orange, is it?");};
+    revealCat("<b>You're right. The only thing I taught you is orange.</b>","<br>But in reality, it's not an orange, is it?");};
   document.getElementById('guessCat').onclick=function(){
-    revealCat("<b>Wait — how did you know? I only ever taught you orange.</b>","<br>But you're right, it's not an orange at all — it's a cat curled up tight, isn't it?");};
+    revealCat("<b>Wait. How did you know? I only ever taught you orange.</b>","<br>But you're right. It's not an orange at all. It's a cat curled up tight, isn't it?");};
   document.getElementById('catFeats').addEventListener('click',function(e){
     var t=e.target;if(!t.classList||!t.classList.contains('chip'))return;
     if(t.dataset.new==='1'&&!t.classList.contains('picked')){
@@ -441,13 +441,13 @@
       }
     }else if(t.dataset.new==='0'){
       var m2=document.getElementById('catFeatMsg');
-      m2.className='msg show lose';m2.textContent='Nope — orange and round were already in Orange. Find what is NEW.';
+      m2.className='msg show lose';m2.textContent='Nope. Orange and round were already in Orange. Find what is NEW.';
     }
   });
   var tasks={
     color:['orange','We only care about color, so the answer is “orange”.'],
     animal:['cat','We care about the animal, so the same photo is “cat”. Task decides!'],
-    feeling:['cute','We care about feeling, so the same photo is “cute”. Features didn\u2019t change — meaning did.']};
+    feeling:['cute','We care about feeling, so the same photo is “cute”. Features didn\u2019t change. Meaning did.']};
   document.querySelectorAll('[data-task]').forEach(function(b){
     b.onclick=function(){
       document.querySelectorAll('[data-task]').forEach(function(x){x.classList.remove('chosen')});
@@ -469,7 +469,7 @@
     if(!chip||chip.style.pointerEvents==='none')return;
     if(kind&&chip.dataset.kind!==kind){
       var bad=document.getElementById('sortMsg');
-      bad.className='msg show lose';bad.textContent='Not quite — try the other bin. Hint: can you SEE it, or must you GUESS it?';
+      bad.className='msg show lose';bad.textContent='Not quite. Try the other bin. Hint: can you SEE it, or must you GUESS it?';
       if(binEl){binEl.classList.remove('over');void binEl.offsetWidth;binEl.classList.add('over');
         setTimeout(function(){binEl.classList.remove('over')},450);}
       return;
@@ -517,7 +517,7 @@
       var q=b.dataset.q,ok=b.dataset.a==='1';
       var m=document.getElementById('q'+q+'msg');
       m.className='msg show '+(ok?'win':'lose');
-      m.textContent=ok?['','Exactly — one label means everything looks like Orange.','Yes! Cat is the answer to predict.','Yes! Feeling task → cute.'][q]
+      m.textContent=ok?['','Exactly. One label means everything looks like Orange.','Yes! Cat is the answer to predict.','Yes! Feeling task → cute.'][q]
         :['','With only Orange taught, the robot cannot invent Cat.','Hint: round is a clue you see. Cat is the answer you guess.','Hint: task decides the label.'][q];
       if(ok&&!answers[q]){answers[q]=1;if(answers[1]&&answers[2]&&answers[3])mark(4);}
     };
